@@ -16,8 +16,10 @@
           extend: {
             colors: {
               "primary-color": "#62B7C6",
+              "primary-color-light": "#80DEEF",
               "secondary-color": "#858585",
               "tertiary-color": "#BDBDBD",
+              "tertiary-color-dark": "#A7A7A7",
             },
           },
         },
@@ -103,7 +105,7 @@
                 alt="Logo ViajaYA"
               />
             </a>
-        </div>
+          </div>
 
           <!-- Desktop -->
           <ul class="md:flex hidden items-center gap-8">
@@ -123,9 +125,15 @@
                 </button>
 
                 <div class="dropdown-content">
-                  <a href="https://basic.viajaya.travel/" target="_blank">Basic</a>
-                  <a href="https://platinum.viajaya.travel/" target="_blank">Platinum</a>
-                  <a href="https://black.viajaya.travel/" target="_blank">Black</a>
+                  <a href="https://basic.viajaya.travel/" target="_blank"
+                    >Basic</a
+                  >
+                  <a href="https://platinum.viajaya.travel/" target="_blank"
+                    >Platinum</a
+                  >
+                  <a href="https://black.viajaya.travel/" target="_blank"
+                    >Black</a
+                  >
                 </div>
               </div>
             </li>
@@ -183,9 +191,15 @@
                   Club <i class="bi bi-chevron-down"></i>
                 </button>
                 <div class="dropdown-content">
-                  <a href="https://basic.viajaya.travel/" target="_blank">Basic</a>
-                  <a href="https://platinum.viajaya.travel/" target="_blank">Platinum</a>
-                  <a href="https://black.viajaya.travel/" target="_blank">Black</a>
+                  <a href="https://basic.viajaya.travel/" target="_blank"
+                    >Basic</a
+                  >
+                  <a href="https://platinum.viajaya.travel/" target="_blank"
+                    >Platinum</a
+                  >
+                  <a href="https://black.viajaya.travel/" target="_blank"
+                    >Black</a
+                  >
                 </div>
               </div>
             </li>
@@ -206,7 +220,9 @@
           </ul>
         </div>
 
-        <section class="flex justify-center items-center text-center md:h-4/5 h-full">
+        <section
+          class="flex justify-center items-center text-center md:h-4/5 h-full"
+        >
           <div>
             <h1 class="text-7xl italic jost-900 text-white">
               Viajar con
@@ -315,18 +331,18 @@
         </div>
 
         <!-- Planes de ViajaYA -->
-        <main
-          class="flex flex-wrap justify-center gap-3 py-10"
-        >
-          <article class="max-w-xs">
+        <main class="flex flex-wrap justify-center gap-3 py-10">
+          <article
+            class="max-w-xs p-4 rounded-3xl border-4 border-primary-color-light"
+          >
             <img
               src="assets/logos/viajaya-basic.png"
-              class="w-52 h-20 object-contain mx-auto m"
+              class="w-52 h-20 object-contain mx-auto mb-8"
               loading="lazy"
               decoding="async"
               alt="Logo ViajaYA Basic"
             />
-            <p class="max-w-xs text-secondary-color">
+            <p class="max-w-[14rem] mx-auto text-secondary-color">
               Para los viajeros que buscan lo esencial sin sacrificar calidad.
             </p>
 
@@ -340,10 +356,10 @@
             </h3>
           </article>
 
-          <article class="max-w-xs md:my-0 my-9">
+          <article class="max-w-xs sm:my-0 my-9 p-4 rounded-3xl border-4 border-tertiary-color-dark">
             <img
               src="assets/logos/viajaya-platinum.png"
-              class="w-52 h-20 object-contain mx-auto m"
+              class="w-52 h-20 object-contain mx-auto mb-8 m"
               loading="lazy"
               decoding="async"
               alt="Logo ViajaYA Platinum"
@@ -362,10 +378,10 @@
             </h3>
           </article>
 
-          <article class="max-w-xs">
+          <article class="max-w-xs p-4 rounded-3xl border-4 border-black">
             <img
               src="assets/logos/viajaya-black.png"
-              class="w-52 h-20 object-contain mx-auto m"
+              class="w-52 h-20 object-contain mx-auto mb-8 m"
               loading="lazy"
               decoding="async"
               alt="Logo ViajaYA Black"
