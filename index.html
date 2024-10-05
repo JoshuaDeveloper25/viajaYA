@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>ViajaYA</title>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "primary-color": "#62B7C6",
+              "secondary-color": "#858585",
+              "tertiary-color": "#BDBDBD",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+    </style>
+
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .container-page {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding-inline: 2rem;
+        }
+
+        .hover-animation-fade {
+          transition: color 0.4s ease;
+        }
+
+        .btn {
+          display: block;
+          font-weight: bolder;
+          padding: 0.7rem 8rem;
+          text-align: center;
+          border-radius: 3rem;
+          border: transparent;
+          font-family: inherit;
+          cursor: pointer;
+          transition: background 0.4s ease;
+        }
+
+        .btn-blue {
+          background-color: #62b7c6;
+          color: #ffffff;
+        }
+
+        .btn-blue:hover {
+          background-color: rgba(98, 183, 198, 0.558);
+          color: #ffffff;
+        }
+
+        .form-input,
+        .form-textarea {
+          display: block;
+          color: #bdbdbd;
+          font-weight: lighter;
+          border: 1px solid #62b7c6;
+          border-radius: 0.3rem;
+          padding: 0.3rem 0.7rem;
+          font-style: italic;
+          margin-bottom: 0.7rem;
+          width: 100%;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+          transition: linear 0.2s;
+          outline: 2px solid #62b7c6;
+        }
+
+        .form-textarea {
+          height: 15rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container-page relative h-full">
+        <nav class="flex justify-between items-center gap-4 pt-5">
+          <div>
+            <a href="#">
+              <img
+                class="w-32"
+                src="/assets/logos/logo-blanco.png"
+                loading="lazy"
+                decoding="async"
+                alt="Logo ViajaYA"
+              />
+            </a>
+        </div>
+
+          <!-- Desktop -->
+          <ul class="md:flex hidden items-center gap-8">
+            <li>
+              <a
+                class="text-white hover-animation-fade hover:text-primary-color"
+                href="#"
+                >Reservar viaje</a
+              >
+            </li>
+            <li>
+              <div class="dropdown">
+                <button
+                  class="text-white hover-animation-fade hover:text-primary-color dropdown-button"
+                >
+                  Club <i class="bi bi-chevron-down"></i>
+                </button>
+
+                <div class="dropdown-content">
+                  <a href="basic.viajaya.travel" target="_blank">Basic</a>
+                  <a href="platinum.viajaya.travel" target="_blank">Platinum</a>
+                  <a href="black.viajaya.travel" target="_blank">Black</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                class="text-white hover-animation-fade hover:text-primary-color"
+                href="#"
+                >Experiencias</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-white hover-animation-fade hover:text-primary-color"
+                href="#"
+                >Contactos</a
+              >
+            </li>
+          </ul>
+
+          <!-- Responsive -->
+          <button
+            id="menuResponsiveButtonClose"
+            class="hidden-important text-white text-4xl"
+            type="button"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+
+          <button
+            id="menuResponsiveButtonHamburguer"
+            class="hidden-important text-white text-4xl"
+            type="button"
+          >
+            <i class="bi bi-list"></i>
+          </button>
+        </nav>
+
+        <!-- Responsive -->
+        <div id="menuResponsiveContent" class="hidden">
+          <ul
+            class="absolute right-0 py-8 bg-black/70 backdrop-blur-sm w-full md:hidden flex flex-col sm:flex-row justify-center items-center gap-8"
+          >
+            <li>
+              <a
+                class="text-white hover-animation-fade hover:text-primary-color"
+                href="#"
+                >Reservar viaje</a
+              >
+            </li>
+            <li>
+              <div class="dropdown">
+                <button
+                  class="text-white hover-animation-fade hover:text-primary-color dropdown-button"
+                >
+                  Club <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="basic.viajaya.travel" target="_blank">Basic</a>
+                  <a href="platinum.viajaya.travel" target="_blank">Platinum</a>
+                  <a href="black.viajaya.travel" target="_blank">Black</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                class="text-white hover-animation-fade hover:text-primary-color"
+                href="#"
+                >Experiencias</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-white hover-animation-fade hover:text-primary-color"
+                href="#"
+                >Contactos</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <section class="flex justify-center items-center text-center h-4/5">
+          <div>
+            <h1 class="text-7xl italic jost-900 text-white">
+              Viajar con
+              <img
+                class="inline w-64"
+                src="/assets/logos/logo-blanco.png"
+                loading="lazy"
+                decoding="async"
+                alt="Logo ViajaYA"
+              />
+            </h1>
+
+            <p class="max-w-[25rem] mx-auto text-xl text-white">
+              es más que ver nuevos lugares, es
+              <span class="jost-900 italic">vivir momentos</span> que
+              <span class="jost-900 italic">te cambian para siempre.</span>
+            </p>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <!-- Nuestros Partners -->
+    <section class="nuestros-partners">
+      <div class="bg-primary-color">
+        <div class="px-4 text-center text-white">
+          <h2 class="jost-900 text-2xl pt-5">Nuestros partners</h2>
+
+          <div
+            class="flex flex-wrap gap-8 lg:justify-between justify-center py-10"
+          >
+            <article class="max-w-md">
+              <img
+                src="assets/logos/partner-1.png"
+                class="w-36 h-20 object-contain"
+                loading="lazy"
+                decoding="async"
+                alt="Logo Partner"
+              />
+            </article>
+
+            <article class="max-w-md">
+              <img
+                src="assets/logos/partner-2.png"
+                class="w-36 h-20 object-contain"
+                loading="lazy"
+                decoding="async"
+                alt="Logo Partner"
+              />
+            </article>
+
+            <article class="max-w-md">
+              <img
+                src="assets/logos/partner-3.png"
+                class="w-36 h-20 object-contain"
+                loading="lazy"
+                decoding="async"
+                alt="Logo Partner"
+              />
+            </article>
+
+            <article class="max-w-md">
+              <img
+                src="assets/logos/partner-4.png"
+                class="w-36 h-20 object-contain"
+                loading="lazy"
+                decoding="async"
+                alt="Logo Partner"
+              />
+            </article>
+
+            <article class="max-w-md">
+              <img
+                src="assets/logos/partner-5.png"
+                class="w-36 h-20 object-contain"
+                loading="lazy"
+                decoding="async"
+                alt="Logo Partner"
+              />
+            </article>
+            <article class="max-w-md">
+              <img
+                src="assets/logos/partner-6.png"
+                class="w-36 h-20 object-contain"
+                loading="lazy"
+                decoding="async"
+                alt="Logo Partner"
+              />
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nuestros Clubes Exclusivos -->
+    <section class="clubes-exclusivos">
+      <div class="container-page py-7 text-center">
+        <div>
+          <h2 class="jost-900 text-2xl text-primary-color">
+            Nuestros Clubes Exclusivos
+          </h2>
+          <p class="text-xl text-secondary-color">
+            No se trata solo de ahorrar, se trata de vivir cada viaje de forma
+            especial.
+          </p>
+        </div>
+
+        <!-- Planes de ViajaYA -->
+        <main
+          class="flex flex-wrap justify-center gap-3 py-10"
+        >
+          <article class="max-w-xs">
+            <img
+              src="assets/logos/viajaya-basic.png"
+              class="w-52 h-20 object-contain mx-auto m"
+              loading="lazy"
+              decoding="async"
+              alt="Logo ViajaYA Basic"
+            />
+            <p class="max-w-xs text-secondary-color">
+              Para los viajeros que buscan lo esencial sin sacrificar calidad.
+            </p>
+
+            <p class="text-secondary-color mt-6">Accede a un</p>
+            <h2 class="text-primary-color/50 text-8xl jost-900">4%</h2>
+            <h3 class="text-secondary-color max-w-[16rem] mx-auto">
+              <span class="text-primary-color jost-900"
+                >de descuento en hoteles y ofertas</span
+              >
+              en vuelos y actividades.
+            </h3>
+          </article>
+
+          <article class="max-w-xs">
+            <img
+              src="assets/logos/viajaya-platinum.png"
+              class="w-52 h-20 object-contain mx-auto m"
+              loading="lazy"
+              decoding="async"
+              alt="Logo ViajaYA Platinum"
+            />
+            <p class="max-w-[16rem] mx-auto text-secondary-color">
+              El equilibrio perfecto entre precio y confort.
+            </p>
+
+            <p class="text-secondary-color mt-6">Accede a un</p>
+            <h2 class="text-primary-color/50 text-8xl jost-900">6%</h2>
+            <h3 class="text-secondary-color max-w-[16rem] mx-auto">
+              <span class="text-primary-color jost-900"
+                >de descuento en hoteles y ofertas</span
+              >
+              en vuelos y a experiencias únicas y personalizadas.
+            </h3>
+          </article>
+
+          <article class="max-w-xs">
+            <img
+              src="assets/logos/viajaya-black.png"
+              class="w-52 h-20 object-contain mx-auto m"
+              loading="lazy"
+              decoding="async"
+              alt="Logo ViajaYA Black"
+            />
+            <p class="text-secondary-color">Un mundo de lujo te espera.</p>
+
+            <p class="text-secondary-color mt-6">Accede a un</p>
+            <h2 class="text-primary-color/50 text-8xl jost-900">8%</h2>
+            <h3 class="text-secondary-color max-w-[16rem] mx-auto">
+              <span class="text-primary-color jost-900"
+                >de descuento en hoteles</span
+              >
+              y acceso a experiencias exclusivas, viaja como siempre lo soñaste.
+            </h3>
+          </article>
+        </main>
+
+        <div class="my-9">
+          <h2 class="jost-900 text-2xl text-primary-color mb-2">
+            ¿Qué tipo de viajero eres?
+          </h2>
+          <p class="text-xl text-secondary-color">
+            Descubre el viaje que mejor se adapta a tu estilo.
+            <span class="jost-900">En viajaYA</span>, entendemos que cada
+            persona tiene una manera única de viajar. Elige cómo quieres vivir
+            tu próxima aventura,
+            <span class="jost-900"
+              >y nosotros nos encargamos de hacerla inolvidable:</span
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Familias, Parejas, Grupos, Solitario, Empresas -->
+    <section class="viajero-tipo">
+      <article class="viajero-familia">
+        <div class="container-page text-white py-16">
+          <div class="flex justify-end text-end">
+            <div>
+              <h2 class="text-5xl jost-900 border-b-2 border-b-white py-6">
+                Familias
+              </h2>
+              <p class="max-w-sm py-6">
+                Crea momentos que durarán toda la vida en destinos perfectos
+                para disfrutar con los tuyos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="viajero-pareja">
+        <div class="container-page text-white py-16">
+          <div class="flex justify-start text-start">
+            <div>
+              <h2 class="text-5xl jost-900 border-b-2 border-b-white py-6">
+                Parejas
+              </h2>
+              <p class="max-w-sm py-6">
+                Cada aventura es mejor compartida. Descubre el mundo con amigos
+                y haz que cada día sea una nueva historia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="viajero-grupo">
+        <div class="container-page text-white py-16">
+          <div class="flex justify-end text-end">
+            <div>
+              <h2 class="text-5xl jost-900 border-b-2 border-b-white py-6">
+                Grupos
+              </h2>
+              <p class="max-w-sm py-6">
+                 Cada aventura es mejor compartida. Descubre el mundo con amigos
+                y haz que cada día sea una nueva historia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="viajero-solitario">
+        <div class="container-page text-white py-16">
+          <div class="flex justify-start text-start">
+            <div>
+              <h2 class="text-5xl jost-900 border-b-2 border-b-white py-6">
+                Solitario
+              </h2>
+              <p class="max-w-sm py-6">
+                Viajar solo no es estar solo. Es descubrirte a ti mismo en cada
+                paso que das.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="viajero-empresa">
+        <div class="container-page text-white py-16">
+          <div class="flex justify-end text-end">
+            <div>
+              <h2 class="text-5xl jost-900 border-b-2 border-b-white py-6">
+                Empresas
+              </h2>
+              <p class="max-w-sm py-6">
+                 Hacemos que tus viajes de negocio sean eficientes y sin
+                complicaciones, para que puedas enfocarte en lo que realmente
+                importa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Inspiración -->
+    <section class="inspiracion">
+      <div class="container-page">
+        <div class="my-9 text-center">
+          <h2 class="jost-900 text-2xl text-primary-color mb-2">Inspiración</h2>
+          <p class="text-xl text-secondary-color">
+            Muchas cosas nos inspiran a viajar. Cuéntanos cuáles son tus
+            aficiones, tus pasiones, tus intereses, y te ayudaremos a crear un
+            viaje hecho a medida, solo para ti.
+          </p>
+        </div>
+
+        <article class="max-w-3xl mx-auto relative my-24">
+          <h2
+            class="text-4xl tracking-widest text-primary-color italic jost-900 text-center"
+          >
+            Viajar no es escapar de la vida, sino evitar que la vida se nos
+            escape
+          </h2>
+
+          <img
+            src="assets/icons/quote-right.png"
+            class="w-52 absolute -left-16 -top-12 mx-auto"
+            loading="lazy"
+            decoding="async"
+            alt="Icon Quote Right"
+          />
+
+          <img
+            src="assets/icons/quote-left.png"
+            class="w-52 absolute right-0 -top-8 mx-auto"
+            loading="lazy"
+            decoding="async"
+            alt="Icon Quote Left"
+          />
+        </article>
+      </div>
+    </section>
+
+    <!-- Formulario de Contácto -->
+    <form class="formulario-contacto" action="#">
+      <div class="my-9 text-center">
+        <h2 class="jost-900 text-2xl text-primary-color mb-2">
+          ¿No encuentras lo que necesitas?
+        </h2>
+        <p class="max-w-4xl mx-auto text-xl text-secondary-color">
+          No te preocupes, el hecho de que no lo veas aquí no significa que no
+          podamos hacerlo. ¡Estamos aquí para ayudarte a crear
+          <span class="jost-900">TU VIAJE A MEDIDA!</span>
+        </p>
+
+        <p class="text-secondary-color my-8">
+          Puedes contactarnos directamente:
+        </p>
+      </div>
+
+      <main class="max-w-[993px] mx-auto px-4">
+        <h2 class="text-4xl text-primary-color mb-6 jost-900 text-center">
+          Formulario de contácto
+        </h2>
+
+        <!-- Nombre Completo -->
+        <label for="fullName">
+          <span class="jost-900 text-secondary-color">Nombre completo</span>
+          <input
+            placeholder="Introduzca su número nombre completo"
+            class="form-input"
+            name="fullName"
+            required="true"
+            id="fullName"
+            type="text"
+          />
+        </label>
+
+        <!-- Correo Electrónico -->
+        <label for="email">
+          <span class="jost-900 text-secondary-color">Correo electrónico</span>
+          <input
+            placeholder="Introduzca su correo electrónico"
+            class="form-input"
+            required="true"
+            name="email"
+            type="email"
+            id="email"
+          />
+        </label>
+
+        <!-- Teléfono -->
+        <label for="phone">
+          <span class="jost-900 text-secondary-color">Teléfono</span>
+          <input
+            placeholder="Introduzca su teléfono"
+            class="form-input"
+            required="true"
+            type="number"
+            name="phone"
+            id="phone"
+          />
+        </label>
+
+        <!-- ¿En qué podemos ayudarte? -->
+        <label for="help">
+          <span class="jost-900 text-secondary-color"
+            >¿En qué podemos ayudarte?</span
+          >
+          <textarea
+            placeholder="Cuéntanos en qué necesitas ayuda"
+            class="form-textarea"
+            required="true"
+            name="help"
+            id="help"
+          ></textarea>
+        </label>
+
+        <!-- Estoy de acuerdo con la Política de Privacidad -->
+        <label for="terms">
+          <input required="true" type="checkbox" name="terms" id="terms" />
+          <span class="text-secondary-color"
+            >Estoy de acuerdo con la
+            <a class="text-primary-color" href="#"
+              >Política de Privacidad</a
+            ></span
+          >
+        </label>
+
+        <!-- Enviar -->
+        <div class="flex justify-center my-16">
+          <button class="btn btn-blue" type="submit">Enviar</button>
+        </div>
+      </main>
+    </form>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

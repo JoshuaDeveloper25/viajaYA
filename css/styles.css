@@ -1,0 +1,87 @@
+body {
+  font-family: "Jost", sans-serif;
+}
+
+.jost-900 {
+  font-weight: 900;
+}
+
+/* Header */
+.header {
+  background-image: url("/assets/images/header.jpg");
+  background-position: center center;
+  background-size: cover;
+  height: 90vh;
+}
+
+/* Header Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 8rem;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  transition: background, color 0.4s ease;
+  text-decoration: none;
+  padding: 1rem 1rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: black;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  color: #ffffff;
+  background-color: #62b7c6;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Tipo de Viajero */
+.viajero-familia {
+  background-image: url("/assets/images/viajero-1.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+
+.viajero-pareja {
+  background-image: url("/assets/images/viajero-2.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+
+.viajero-grupo {
+  background-image: url("/assets/images/viajero-3.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+
+.viajero-solitario {
+  background-image: url("/assets/images/viajero-4.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+
+.viajero-empresa {
+  background-image: url("/assets/images/viajero-5.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+
+/* This is for hidden */
+@media (min-width: 768px) {
+    .hidden-important {
+        display: none!important;
+    }
+}
