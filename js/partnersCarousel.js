@@ -35,6 +35,8 @@ $(document).ready(function () {
         settings: {
           slidesToShow: 1,
           autoplaySpeed: 1500,
+          centerMode: true,
+          centerPadding: '60px',
         },
       },
     ],
