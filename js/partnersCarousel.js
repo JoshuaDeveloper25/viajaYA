@@ -5,6 +5,10 @@ $(document).ready(function () {
     autoplay: true,
     autoplaySpeed: 1000,
     arrows: false,
+    pauseOnHover: false,
+    pauseOnClick: false,
+    pauseOnFocus: false,
+    pauseOnSwipe: true,
     responsive: [
       {
         breakpoint: 1000,
@@ -36,7 +40,7 @@ $(document).ready(function () {
           slidesToShow: 1,
           autoplaySpeed: 1500,
           centerMode: true,
-          centerPadding: '60px',
+          centerPadding: "60px",
         },
       },
     ],
