@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Boostrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Internal Styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>ViajaYA - Experiencias</title>
+
+    <!-- Tailwind Global Classes -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "primary-color": "#62B7C6",
+              "primary-color-light": "#80DEEF",
+              "secondary-color": "#858585",
+              "tertiary-color": "#BDBDBD",
+              "tertiary-color-dark": "#A7A7A7",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Import Google Fonts Jost Font Family -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+    </style>
+
+    <!-- Tailwind Classes/Utilities -->
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .container-page {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding-inline: 2rem;
+        }
+
+        .hover-animation-fade {
+          transition: color 0.4s ease;
+        }
+
+        .btn {
+          display: block;
+          font-weight: bolder;
+          padding: 0.7rem 8rem;
+          text-align: center;
+          border-radius: 3rem;
+          border: transparent;
+          font-family: inherit;
+          cursor: pointer;
+          transition: background 0.4s ease;
+        }
+
+        .btn-blue {
+          background-color: #62b7c6;
+          color: #ffffff;
+        }
+
+        .btn-blue:hover {
+          background-color: rgba(98, 183, 198, 0.558);
+          color: #ffffff;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header-experiencias">
+      <div class="container-page relative h-full">
+        <nav class="flex justify-between items-center gap-4 pt-5">
+          <div>
+            <a href="/index.html">
+              <img
+                class="w-32"
+                src="/assets/logos/logo-azul.png"
+                loading="lazy"
+                decoding="async"
+                alt="Logo ViajaYA"
+              />
+            </a>
+          </div>
+
+          <!-- Desktop -->
+          <ul class="md:flex hidden items-center gap-8 text-primary-color">
+            <li>
+              <a
+                class="hover-animation-fade hover:text-primary-color"
+                target="_blank"
+                href="https://clientes.viajaya.travel/"
+                >Reservar viaje</a
+              >
+            </li>
+            <li>
+              <div class="dropdown">
+                <button
+                  class="hover-animation-fade hover:text-primary-color dropdown-button"
+                >
+                  Club <i class="bi bi-chevron-down"></i>
+                </button>
+
+                <div class="dropdown-content bg-black">
+                  <a href="https://basic.viajaya.travel/" target="_blank">
+                    <img
+                      class="w-28"
+                      src="/assets/logos/viajaya-basic-white.png"
+                      loading="lazy"
+                      decoding="async"
+                      alt="Logo ViajaYA Basic White"
+                  /></a>
+                  <a href="https://black.viajaya.travel/" target="_blank">
+                    <img
+                      class="w-28"
+                      src="/assets/logos/viajaya-black-white.png"
+                      loading="lazy"
+                      decoding="async"
+                      alt="Logo ViajaYA Black White"
+                    />
+                  </a>
+                  <a href="https://platinum.viajaya.travel/" target="_blank"
+                    ><img
+                      class="w-28"
+                      src="/assets/logos/viajaya-platinum-white.png"
+                      loading="lazy"
+                      decoding="async"
+                      alt="Logo ViajaYA Platinum White"
+                  /></a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                class="hover-animation-fade hover:text-primary-color"
+                href="/experiencias.html"
+                >Experiencias</a
+              >
+            </li>
+            <li>
+              <a class="hover-animation-fade hover:text-primary-color" href="#"
+                >Contactos</a
+              >
+            </li>
+          </ul>
+
+          <!-- Responsive -->
+          <button
+            id="menuResponsiveButtonClose"
+            class="hidden-important text-4xl text-primary-color"
+            type="button"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+
+          <button
+            id="menuResponsiveButtonHamburguer"
+            class="hidden-important text-4xl text-primary-color"
+            type="button"
+          >
+            <i class="bi bi-list"></i>
+          </button>
+        </nav>
+
+        <!-- Responsive -->
+        <div id="menuResponsiveContent" class="hidden">
+          <ul
+            class="absolute text-primary-color right-0 py-8 bg-black/70 backdrop-blur-sm w-full md:hidden flex flex-col sm:flex-row justify-center items-center gap-8"
+          >
+            <li>
+              <a
+                class="hover-animation-fade hover:text-primary-color"
+                target="_blank"
+                href="https://clientes.viajaya.travel/"
+                >Reservar viaje</a
+              >
+            </li>
+            <li>
+              <div class="dropdown">
+                <button
+                  class="hover-animation-fade hover:text-primary-color dropdown-button"
+                >
+                  Club <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="https://basic.viajaya.travel/" target="_blank">
+                    <img
+                      class="w-28"
+                      src="/assets/logos/viajaya-basic-white.png"
+                      loading="lazy"
+                      decoding="async"
+                      alt="Logo ViajaYA Basic White"
+                  /></a>
+                  <a href="https://black.viajaya.travel/" target="_blank">
+                    <img
+                      class="w-28"
+                      src="/assets/logos/viajaya-black-white.png"
+                      loading="lazy"
+                      decoding="async"
+                      alt="Logo ViajaYA Black White"
+                    />
+                  </a>
+                  <a href="https://platinum.viajaya.travel/" target="_blank"
+                    ><img
+                      class="w-28"
+                      src="/assets/logos/viajaya-platinum-white.png"
+                      loading="lazy"
+                      decoding="async"
+                      alt="Logo ViajaYA Platinum White"
+                  /></a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                class="hover-animation-fade hover:text-primary-color"
+                href="/experiencias.html"
+                >Experiencias</a
+              >
+            </li>
+            <li>
+              <a class="hover-animation-fade hover:text-primary-color" href="#"
+                >Contactos</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <section
+          class="flex gap-8 flex-col md:flex-row items-center text-primary-color mt-8"
+        >
+          <article class="flex-1">
+            <h2 class="text-5xl italic tracking-wider jost-900">
+              Travel Experiences
+            </h2>
+            <p class="text-xl mb-8">
+              Donde los sueños se convierten en recuerdos inolvidables
+            </p>
+
+            <p class="max-w-md">
+              En
+              <img
+                class="inline w-16"
+                src="assets/logos/logo-azul.png"
+                loading="lazy"
+                decoding="async"
+              />
+              entendemos que un viaje no es solo moverse de un lugar a otro.
+              <span class="jost-900">Es vivir momentos que cambian vidas,</span>
+              experiencias que marcan el alma. Por eso, hemos creado nuestras
+              Travel Experiences, diseñadas para los miembros más exclusivos de
+              nuestro <span class="jost-900">Club de Viajes.</span>
+            </p>
+          </article>
+
+          <article class="flex-1 self-end">
+            <img
+              src="assets/images/header-experiencias.png"
+              loading="lazy"
+              decoding="async"
+            />
+          </article>
+        </section>
+      </div>
+    </header>
+
+    <!-- Experiencias -->
+    <main class="tipo-experiencias">
+      <!-- Vive lo extraordinario -->
+      <article class="flex flex-col-reverse sm:flex-row">
+        <div class="flex-1">
+          <img
+            class="w-full h-full"
+            src="/assets/images/experiencia-1.jpg"
+            loading="lazy"
+            decoding="async"
+            alt="Mujer Levantando Manos"
+          />
+        </div>
+
+        <div class="flex-1 bg-primary-color">
+          <div
+            class="flex items-center h-full justify-center text-end text-white px-6"
+          >
+            <div>
+              <h2 class="text-4xl jost-900 border-b-2 border-b-white py-6">
+                Vive lo <span class="block">extraordinario</span>
+              </h2>
+              <p class="max-w-sm py-6">
+                Imagina un viaje donde cada detalle ha sido pensado para ti.
+                Donde cada paisaje, cada encuentro, y cada actividad está llena
+                de magia. Nuestros viajes no son comunes,
+                <span class="jost-900">son únicos.</span> Son una puerta abierta
+                a lo extraordinario, donde no solo visitas un lugar, sino que lo
+                sientes y lo vives como nunca antes.
+
+                <span class="block mt-3"
+                  ><span class="jost-900"
+                    >Con proveedores en más de 100 países,</span
+                  >
+                  diseñamos y operamos nuestras propias experiencias, asegurando
+                  que cada aventura sea tan especial como lo has soñado.</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Creando recuerdos para toda la vida -->
+      <article class="flex flex-col sm:flex-row">
+        <div class="flex-1 bg-primary-color">
+          <div
+            class="flex items-center h-full justify-center text-start text-white px-6"
+          >
+            <div>
+              <h2 class="text-4xl jost-900 border-b-2 border-b-white py-6">
+                Creando recuerdos <span class="block">para toda la vida</span>
+              </h2>
+              <p class="max-w-sm py-6">
+                No solo creamos viajes,
+                <span class="jost-900">creamos recuerdos</span> que vivirán en
+                tu corazón para siempre. Imagina pasear por antiguas calles
+                llenas de historia, relajarte en playas paradisíacas o disfrutar
+                de una cena bajo las estrellas, rodeado de aquellos que
+                comparten tu misma pasión por descubrir el mundo.
+                <span class="block mt-3.5"
+                  >Cada experiencia está pensada para
+                  <span class="jost-900"
+                    >convertir tus sueños en realidad.</span
+                  >
+                  Momentos especiales, viajes incomparables, llenos de detalles
+                  que harán que cada día sea inolvidable.</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-1">
+          <img
+            class="w-full h-full"
+            src="/assets/images/experiencia-2.jpg"
+            loading="lazy"
+            decoding="async"
+            alt="Mujer Sonriendo"
+          />
+        </div>
+      </article>
+
+      <!-- Un viaje que es solo para ti -->
+      <article class="flex flex-col-reverse sm:flex-row">
+        <div class="flex-1">
+          <img
+            class="w-full h-full"
+            src="/assets/images/experiencia-3.jpg"
+            loading="lazy"
+            decoding="async"
+            alt="Mujer Sonriendo Viendo El Horizonte"
+          />
+        </div>
+
+        <div class="flex-1 bg-primary-color">
+          <div
+            class="flex items-center h-full justify-center text-end text-white px-6"
+          >
+            <div>
+              <h2 class="text-4xl jost-900 border-b-2 border-b-white py-6">
+                Un viaje que es <span class="block">solo para ti</span>
+              </h2>
+              <p class="max-w-sm py-6">
+                Nuestras <span class="jost-900">Travel Experiences</span> están
+                diseñadas exclusivamente para ti por ser miembro del
+                <span class="jost-900">Club de viajaYA</span>. Aquí no se trata
+                solo de viajar, se trata de conectar con otros miembros del club
+                y juntos vivir aventuras que superan cualquier expectativa.
+                <span class="jost-900">Vive lo que siempre has soñado</span> al
+                lado de personas que comparten tu misma pasión por descubrir,
+                explorar y crear recuerdos únicos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- El viaje de tus sueños te espera -->
+      <article class="flex flex-col sm:flex-row">
+        <div class="flex-1 bg-primary-color">
+          <div
+            class="flex items-center h-full justify-center text-start text-white px-6"
+          >
+            <div>
+              <h2 class="text-4xl jost-900 border-b-2 border-b-white py-6">
+                El viaje de tus <span class="block">sueños te espera</span>
+              </h2>
+              <p class="max-w-sm py-6">
+                No hay límites para lo que puedes vivir con viajaYA. Crearemos
+                el viaje que siempre has deseado, una experiencia que podrás
+                compartir con otros miembros del club. Porque no solo operamos
+                viajes, creamos momentos que permanecerán contigo para siempre.
+
+                <span class="block mt-3.5"
+                  ><span class="jost-900"
+                    >Viajar no es solo ver lugares, es sentirlos, vivirlos, y
+                    hacer que cada segundo cuente.</span
+                  >
+                  Tu próxima gran aventura está a un clic de distancia.</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-1">
+          <img
+            class="w-full h-full"
+            src="/assets/images/experiencia-4.jpg"
+            loading="lazy"
+            decoding="async"
+            alt="Dos Personas Viendo Horizonte"
+          />
+        </div>
+      </article>
+    </main>
+
+    <!-- External JS Imports -->
+    <script src="./js/menuResponsive.js"></script>
+  </body>
+</html>
