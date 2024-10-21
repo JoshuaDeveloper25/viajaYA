@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Boostrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Internal Styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>ViajaYA - Contactos</title>
+
+    <!-- Tailwind Global Classes -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "primary-color": "#62B7C6",
+              "primary-color-light": "#80DEEF",
+              "secondary-color": "#858585",
+              "tertiary-color": "#BDBDBD",
+              "tertiary-color-dark": "#A7A7A7",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Import Google Fonts Jost Font Family -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+    </style>
+
+    <!-- Tailwind Classes/Utilities -->
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .container-page {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding-inline: 2rem;
+        }
+
+        .hover-animation-fade {
+          transition: color 0.4s ease;
+        }
+
+        .btn {
+          display: block;
+          font-weight: bolder;
+          padding: 0.7rem 0.7rem;
+          text-align: center;
+          border-radius: 3rem;
+          border: transparent;
+          font-family: inherit;
+          cursor: pointer;
+          transition: background 0.4s ease;
+        }
+
+        .btn-blue {
+          background-color: #62b7c6;
+          color: #ffffff;
+        }
+
+        .btn-blue:hover {
+          background-color: rgba(98, 183, 198, 0.558);
+          color: #ffffff;
+        }
+
+        .form-input,
+        .form-textarea {
+          display: block;
+          color: #bdbdbd;
+          font-weight: lighter;
+          border: 1px solid #62b7c6;
+          border-radius: 0.3rem;
+          padding: 0.3rem 0.7rem;
+          font-style: italic;
+          margin-bottom: 0.75rem;
+          background: transparent;
+          width: 100%;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+          transition: linear 0.2s;
+          outline: 2px solid #62b7c6;
+        }
+
+        .form-textarea {
+          height: 15rem;
+        }
+
+        input[type="checkbox"] {
+          appearance: none;
+          color: #62b7c6;
+          width: 1rem;
+          height: 1rem;
+          border: 1px solid #62b7c6;
+          border-radius: 0.15em;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header-experiencias">
+      <div class="container-page relative h-full">
+        <nav class="flex justify-between items-center gap-4 pt-5">
+          <div>
+            <a href="/index.html">
+              <img
+                class="w-32"
+                src="/assets/logos/logo-azul.png"
+                loading="lazy"
+                decoding="async"
+                alt="Logo ViajaYA"
+              />
+            </a>
+          </div>
+
+          <!-- Desktop -->
+          <ul class="md:flex hidden items-center gap-8 text-primary-color">
+            <li>
+              <a
+                class="hover-animation-fade hover:text-primary-color"
+                target="_blank"
+                href="https://clientes.viajaya.travel/"
+                >Reservar viaje</a
+              >
+            </li>
+            <li>
+              <div class="dropdown">
+                <button
+                  class="hover-animation-fade hover:text-primary-color dropdown-button"
+                >
+                  Club <i class="bi bi-chevron-down"></i>
+                </button>
+
+                <div class="dropdown-content">
+                  <a href="https://basic.viajaya.travel/" target="_blank">
+                    <span class="font-[100]">CLUB</span>
+                    <span class="jost-90 font-boldest0">BASIC</span>
+                  </a>
+
+                  <a href="https://platinum.viajaya.travel/" target="_blank"
+                    ><span class="font-[100]">CLUB</span>
+                    <span class="jost-900 font-boldest">PLATINUM</span></a
+                  >
+
+                  <a href="https://black.viajaya.travel/" target="_blank">
+                    <span class="font-[100]">CLUB</span>
+                    <span class="jost-90 font-boldest0">BLACK</span>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                class="hover-animation-fade hover:text-primary-color"
+                href="/experiencias.html"
+                >Experiencias</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover-animation-fade hover:text-primary-color"
+                href="contactos.html"
+                >Contactos</a
+              >
+            </li>
+          </ul>
+
+          <!-- Responsive -->
+          <button
+            id="menuResponsiveButtonClose"
+            class="hidden-important text-4xl text-primary-color"
+            type="button"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+
+          <button
+            id="menuResponsiveButtonHamburguer"
+            class="hidden-important text-4xl text-primary-color"
+            type="button"
+          >
+            <i class="bi bi-list"></i>
+          </button>
+        </nav>
+
+        <!-- Responsive -->
+        <div id="menuResponsiveContent" class="hidden">
+          <ul
+            class="absolute text-primary-color right-0 py-8 bg-black/70 backdrop-blur-sm w-full md:hidden flex flex-col sm:flex-row justify-center items-center gap-8"
+          >
+            <li>
+              <a
+                class="hover-animation-fade hover:text-primary-color"
+                target="_blank"
+                href="https://clientes.viajaya.travel/"
+                >Reservar viaje</a
+              >
+            </li>
+            <li>
+              <div class="dropdown">
+                <button
+                  class="hover-animation-fade hover:text-primary-color dropdown-button"
+                >
+                  Club <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="https://basic.viajaya.travel/" target="_blank">
+                    <span class="font-[100]">CLUB</span>
+                    <span class="jost-90 font-boldest0">BASIC</span>
+                  </a>
+
+                  <a href="https://platinum.viajaya.travel/" target="_blank"
+                    ><span class="font-[100]">CLUB</span>
+                    <span class="jost-900 font-boldest">PLATINUM</span></a
+                  >
+
+                  <a href="https://black.viajaya.travel/" target="_blank">
+                    <span class="font-[100]">CLUB</span>
+                    <span class="jost-90 font-boldest0">BLACK</span>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                class="hover-animation-fade hover:text-primary-color"
+                href="/experiencias.html"
+                >Experiencias</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover-animation-fade hover:text-primary-color"
+                href="contactos.html"
+                >Contactos</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Formulario de Contácto -->
+    <form class="formulario-contacto px-4 mb-32" action="#">
+      <main class="container-form">
+        <h2
+          class="text-4xl text-primary-color italic mb-6 mt-10 jost-900 text-center"
+        >
+          Registrate y Únete
+        </h2>
+
+        <!-- Nombre y Primer Apellido -->
+        <div class="flex flex-col sm:flex-row sm:gap-3">
+          <!-- Nombre -->
+          <label class="flex-1" for="firstName">
+            <span class="font-[500] text-primary-color">Nombre</span>
+            <input
+              placeholder="Introduzca su nombre"
+              class="form-input"
+              name="firstName"
+              required="true"
+              id="firstName"
+              type="text"
+            />
+          </label>
+
+          <!-- Primer Apellido -->
+          <label class="flex-1" for="firstSurName">
+            <span class="font-[500] text-primary-color">Primer apellido</span>
+            <input
+              placeholder="Introduzca su primer apellido"
+              class="form-input"
+              name="firstSurName"
+              required="true"
+              id="firstSurName"
+              type="text"
+            />
+          </label>
+        </div>
+
+        <!-- Segundo apellido y fecha de nacimiento -->
+        <div class="flex flex-col sm:flex-row sm:gap-3">
+          <!-- Segundo Apellido -->
+          <label class="flex-1" for="lastSurName">
+            <span class="font-[500] text-primary-color">Segundo Apellido</span>
+            <input
+              placeholder="Introduzca su segundo apellido"
+              class="form-input"
+              name="lastSurName"
+              required="true"
+              id="lastSurName"
+              type="text"
+            />
+          </label>
+
+          <!-- Fecha de nacimiento -->
+          <label class="flex-1" for="sur_name">
+            <span class="font-[500] text-primary-color"
+              >Fecha de nacimiento</span
+            >
+            <input
+              class="form-input"
+              name="sur_name"
+              required="true"
+              id="sur_name"
+              type="date"
+            />
+          </label>
+        </div>
+
+        <!-- Email y verificación de email -->
+        <div class="flex flex-col sm:flex-row sm:gap-3">
+          <!-- Email -->
+          <label class="flex-1" for="email">
+            <span class="font-[500] text-primary-color">Email</span>
+            <input
+              placeholder="Ejemplo@gmail.com"
+              class="form-input"
+              required="true"
+              name="email"
+              type="email"
+              id="email"
+            />
+          </label>
+
+          <!-- Email Verification -->
+          <label class="flex-1" for="email_verification">
+            <span class="font-[500] text-primary-color">Confirmar email</span>
+            <input
+              placeholder="Ejemplo@gmail.com"
+              class="form-input"
+              required="true"
+              name="email_verification"
+              type="email"
+              id="email_verification"
+            />
+          </label>
+        </div>
+
+        <!-- Teléfono y nombre de usuario -->
+        <div class="flex flex-col items-end sm:flex-row sm:gap-3">
+          <div class="flex-1 w-full">
+            <div class="flex items-end gap-3">
+              <!-- Select Teléfono -->
+              <label class="flex-1" for="phoneOptions">
+                <span class="font-[500] text-primary-color">Teléfono</span>
+                <select
+                  placeholder="Introduzca su teléfono"
+                  class="form-input"
+                  required="true"
+                  name="phoneOptions"
+                  id="phoneOptions"
+                ></select>
+              </label>
+
+              <!-- Teléfono -->
+              <label class="flex-[30%]" for="phoneNumber">
+                <input
+                  placeholder="Número de teléfono"
+                  class="form-input"
+                  required="true"
+                  type="number"
+                  name="phoneNumber"
+                  id="phoneNumber"
+                />
+              </label>
+            </div>
+          </div>
+
+          <div class="flex-1 w-full">
+            <!-- Nombre de usuario -->
+            <label class="flex-[30%]" for="user">
+              <span class="font-[500] text-primary-color"
+                >Nombre de usuario</span
+              >
+              <input
+                placeholder="Usuario"
+                class="form-input"
+                required="true"
+                type="text"
+                name="user"
+                id="user"
+              />
+            </label>
+          </div>
+        </div>
+
+        <!-- Estoy de acuerdo con la Política de Privacidad -->
+        <label for="terms">
+          <input
+            required="true"
+            class="accent-primary-color"
+            type="checkbox"
+            name="terms"
+            id="terms"
+          />
+          <span class="text-secondary-color"
+            >He leído y acepto
+            <a class="text-primary-color" href="#"
+              >los términos y condiciones </a
+            >y la<a class="text-primary-color" href="#">
+              política de privacidad</a
+            ></span
+          >
+        </label>
+
+        <!-- Enviar -->
+        <div class="flex justify-center max-w-2xl mx-auto my-8">
+          <button class="btn btn-blue w-full" type="submit">Registrarse</button>
+        </div>
+      </main>
+    </form>
+
+    <!-- Footer -->
+    <footer class="bg-primary-color h-60 relative bottom-0 w-full"></footer>
+
+    <!-- External JS Imports -->
+    <script src="./js/menuResponsive.js"></script>
+  </body>
+</html>

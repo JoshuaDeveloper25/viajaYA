@@ -53,6 +53,11 @@
           padding-inline: 2rem;
         }
 
+        .container-form {
+          max-width: 993px;
+          margin: 0 auto;
+        }
+
         .hover-animation-fade {
           transition: color 0.4s ease;
         }
@@ -60,7 +65,7 @@
         .btn {
           display: block;
           font-weight: bolder;
-          padding: 0.7rem 8rem;
+          padding: 0.7rem .7rem;
           text-align: center;
           border-radius: 3rem;
           border: transparent;
@@ -111,7 +116,7 @@
       <div class="container-page relative h-full">
         <nav class="flex justify-between items-center gap-4 pt-5">
           <div>
-            <a href="#">
+            <a href="index.html">
               <img
                 class="w-32"
                 src="/assets/logos/logo-blanco.png"
@@ -168,7 +173,7 @@
             <li>
               <a
                 class="text-white hover-animation-fade hover:text-primary-color"
-                href="#"
+                href="contactos.html"
                 >Contactos</a
               >
             </li>
@@ -240,7 +245,7 @@
             <li>
               <a
                 class="text-white hover-animation-fade hover:text-primary-color"
-                href="#"
+                href="contactos.html"
                 >Contactos</a
               >
             </li>
@@ -711,7 +716,7 @@
         </p>
       </div>
 
-      <main class="max-w-[993px] mx-auto">
+      <main class="container-form">
         <h2 class="text-4xl text-primary-color mb-6 jost-900 text-center">
           Formulario de contácto
         </h2>
@@ -720,7 +725,7 @@
         <label for="fullName">
           <span class="jost-900 text-secondary-color">Nombre completo</span>
           <input
-            placeholder="Introduzca su número nombre completo"
+            placeholder="Introduzca su nombre completo"
             class="form-input"
             name="fullName"
             required="true"
@@ -781,8 +786,8 @@
         </label>
 
         <!-- Enviar -->
-        <div class="flex justify-center my-16">
-          <button class="btn btn-blue" type="submit">Enviar</button>
+        <div class="flex justify-center my-16 max-w-xs mx-auto">
+          <button class="btn btn-blue w-full" type="submit">Enviar</button>
         </div>
       </main>
     </form>
